@@ -4,6 +4,11 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn --version'
+                sh 'excho "Hello world"'
+                sh '''
+                echo "Multiline works wow"
+                ls -lrt
+                '''
             }
         }
     }
