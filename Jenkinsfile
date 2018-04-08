@@ -9,6 +9,11 @@ pipeline {
                 sh 'mvn --version'
             }
         }
+        stage('Sanity check') {
+            steps {
+                input "Does the staging environment look ok?"
+            }
+        }
         stage('Front-end') {
             agent {
                 docker { image 'node:7-alpine' }
